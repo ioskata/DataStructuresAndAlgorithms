@@ -76,6 +76,10 @@
             {
                 previous = this[index - 1];
                 previous.NextNode = removed.NextNode;
+                if (removed == this.tail)
+                {
+                    this.tail = previous;
+                }
             }
             else
             {

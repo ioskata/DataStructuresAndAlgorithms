@@ -1,18 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Task07LinkedList;
-using System.Collections.Generic;
-
-namespace SingleIndexedLinkedList.Tests
+﻿namespace SingleIndexedLinkedList.Tests
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    using Task07LinkedList;
+
     [TestClass]
     public class SingleIndexedLinkedListUnitTests
     {
-        // test
-        // Add
-        // Remove by index
-        // FirstIndex
-        // LastIndex
         private const string MESSAGE_COUNTNOTMATCHING = "Items count is not correct.";
         private const string MESSAGE_FIRSTINDEXOF = "FirstIndexOf is not correct";
         private const string MESSAGE_LASTINDEXOF = "LastIndexOf is not correct";
@@ -103,7 +100,7 @@ namespace SingleIndexedLinkedList.Tests
             Assert.AreEqual(-1, list.LastIndexOf(4), MESSAGE_LASTINDEXOF);
 
             var expectedList = this.FillIntoList(list);
-            CollectionAssert.AreEqual(expectedList, new List<int>() { 58,659816519, 165965 }, "Elements' order is not correct.");
+            CollectionAssert.AreEqual(expectedList, new List<int>() { 58, 659816519, 165965 }, "Elements' order is not correct.");
         }
 
         [TestMethod]
@@ -163,6 +160,49 @@ namespace SingleIndexedLinkedList.Tests
             list.Remove(2);
         }
 
+        [TestMethod]
+        public void RemovingTailShouldAllowCorrectAddingAfterwards()
+        {
+            var list = new SingleIndexedLinkedList<int>();
+
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            list.Add(6);
+            list.Add(7);
+
+            list.Remove(2);
+            list.Remove(3);
+            list.Remove(4);
+            list.Add(8);
+            list.Add(9);
+
+            Assert.AreEqual(6, list.Count, MESSAGE_COUNTNOTMATCHING);
+
+            var items = FillIntoList(list);
+            CollectionAssert.AreEqual(new List<int>() { 1, 2, 4, 6, 8, 9 }, items, "Adding items after tail has been removed should work correctly.");
+        }
+
+        [TestMethod]
+        public void RemovingSingleElementShouldAllowCorrectAddingAfterwards()
+        {
+            var list = new SingleIndexedLinkedList<int>();
+
+            list.Add(1);
+            list.Add(2);
+
+            list.Remove(0);
+            list.Remove(0);
+            list.Add(8);
+            list.Add(9);
+
+            Assert.AreEqual(2, list.Count, MESSAGE_COUNTNOTMATCHING);
+
+            var items = FillIntoList(list);
+            CollectionAssert.AreEqual(new List<int>() { 8, 9 }, items, "Adding items after tail has been removed should work correctly.");
+        }
 
         private List<int> FillIntoList(SingleIndexedLinkedList<int> linkedList)
         {
