@@ -28,9 +28,9 @@
         /// <summary>
         /// Holds the number of elements in the structure
         /// </summary>
-        public long Count { get; set; }
+        public long Count { get; private set; }
 
-        public long Capacity { get; set; }
+        public long Capacity { get; private set; }
 
         public T this[long index]
         {
