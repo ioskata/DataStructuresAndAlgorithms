@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task07LinkedList", "Task07L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleIndexedLinkedList.Tests", "SingleIndexedLinkedList.Tests\SingleIndexedLinkedList.Tests.csproj", "{C1345A14-EF52-4B5C-B785-F6241886D353}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task08DistanceInLabyrinth", "Task08DistanceInLabyrinth\Task08DistanceInLabyrinth.csproj", "{96793738-8336-4DF2-B3D6-F8B17C43CC34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C1345A14-EF52-4B5C-B785-F6241886D353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1345A14-EF52-4B5C-B785-F6241886D353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1345A14-EF52-4B5C-B785-F6241886D353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96793738-8336-4DF2-B3D6-F8B17C43CC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96793738-8336-4DF2-B3D6-F8B17C43CC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96793738-8336-4DF2-B3D6-F8B17C43CC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96793738-8336-4DF2-B3D6-F8B17C43CC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
