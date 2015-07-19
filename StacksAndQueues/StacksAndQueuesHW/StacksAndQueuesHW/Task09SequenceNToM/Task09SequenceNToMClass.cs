@@ -24,6 +24,13 @@ namespace Task09SequenceNToM
             queue.Enqueue(m);
             while (m / 2 >= n)
             {
+                if (m % 2 != 0)
+                {
+                    m = m - 1;
+                    queue.Enqueue(m);
+                    continue;
+                }
+
                 m = m / 2;
                 queue.Enqueue(m);
             }
