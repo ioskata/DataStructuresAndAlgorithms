@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01PlayWithTrees", "Task01PlayWithTrees\Task01PlayWithTrees.csproj", "{BF60BB68-10D7-4ACD-B296-A1C71DBD9673}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03CalculateArithmeticExpression", "Task03CalculateArithmeticExpression\Task03CalculateArithmeticExpression.csproj", "{986E614E-1011-4DC2-A597-94A72771CE5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02DirectoryTree", "Task02DirectoryTree\Task02DirectoryTree.csproj", "{8A0FA2EB-F813-4CF4-A3CC-D6B481C97F2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{986E614E-1011-4DC2-A597-94A72771CE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{986E614E-1011-4DC2-A597-94A72771CE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{986E614E-1011-4DC2-A597-94A72771CE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A0FA2EB-F813-4CF4-A3CC-D6B481C97F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A0FA2EB-F813-4CF4-A3CC-D6B481C97F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A0FA2EB-F813-4CF4-A3CC-D6B481C97F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A0FA2EB-F813-4CF4-A3CC-D6B481C97F2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
