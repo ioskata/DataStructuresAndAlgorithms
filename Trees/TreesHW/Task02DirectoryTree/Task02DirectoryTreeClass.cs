@@ -18,14 +18,30 @@
         private static void BuildTree(Folder folder)
         {
             Console.WriteLine(folder.Name);
-            var files = new DirectoryInfo(folder.Name).GetFiles();
+            FileInfo[] files = new FileInfo[] { };
+            try
+            {
+                files = new DirectoryInfo(folder.Name).GetFiles();
+            }
+            catch (UnauthorizedAccessException uaex)
+            {
+
+            }
             foreach (var childFile in files)
             {
                 File file = new File(childFile.FullName, childFile.Length);
                 folder.Files.Add(file);
             }
 
-            var folders = new DirectoryInfo(folder.Name).GetDirectories();
+            DirectoryInfo[] folders = new DirectoryInfo[] { };
+            try
+            {
+                folders = new DirectoryInfo(folder.Name).GetDirectories();
+            }
+            catch (UnauthorizedAccessException uaex)
+            {
+            }
+
             foreach (var childFolder in folders)
             {
                 Folder customFolder = new Folder(childFolder.FullName);
