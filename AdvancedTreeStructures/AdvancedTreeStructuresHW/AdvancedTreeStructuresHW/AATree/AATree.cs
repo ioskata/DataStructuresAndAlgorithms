@@ -16,7 +16,7 @@
 
         public Node<TValue> Add(TValue value)
         {
-            Node<TValue> added = this.Insert(value, this.root);
+            Node<TValue> added = this.Insert(value, ref this.root);
             if (this.Count < 1)
             {
                 this.root = added;
@@ -28,12 +28,12 @@
 
         public Node<TValue> Remove(TValue value)
         {
-            var deleted = this.Delete(value, this.root);
+            var deleted = this.Delete(value, ref this.root);
             this.Count--;
             return deleted;
         }
 
-        private Node<TValue> Insert(TValue value, Node<TValue> nodeToInsertInto)
+        private Node<TValue> Insert(TValue value, ref Node<TValue> nodeToInsertInto)
         {
             if (null == nodeToInsertInto)
             {
@@ -41,20 +41,20 @@
             }
             else if (value.CompareTo(nodeToInsertInto.Value) < 0)
             {
-                nodeToInsertInto.left = Insert(value, nodeToInsertInto.left);
+                nodeToInsertInto.left = Insert(value, ref nodeToInsertInto.left);
             }
             else if (value.CompareTo(nodeToInsertInto.Value) > 0)
             {
-                nodeToInsertInto.right = Insert(value, nodeToInsertInto.right);
+                nodeToInsertInto.right = Insert(value, ref nodeToInsertInto.right);
             }
 
-            nodeToInsertInto = this.Skew(nodeToInsertInto);
-            nodeToInsertInto = this.Split(nodeToInsertInto);
+            nodeToInsertInto = this.Skew(ref nodeToInsertInto);
+            nodeToInsertInto = this.Split(ref nodeToInsertInto);
 
             return nodeToInsertInto;
         }
 
-        private Node<TValue> Delete(TValue value, Node<TValue> rootToDeleteFrom)
+        private Node<TValue> Delete(TValue value, ref Node<TValue> rootToDeleteFrom)
         {
             if (null == rootToDeleteFrom)
             {
@@ -62,11 +62,11 @@
             }
             else if (value.CompareTo(rootToDeleteFrom.Value) > 0)
             {
-                rootToDeleteFrom.right = Delete(value, rootToDeleteFrom.right);
+                rootToDeleteFrom.right = Delete(value, ref rootToDeleteFrom.right);
             }
             else if (value.CompareTo(rootToDeleteFrom.Value) < 0)
             {
-                rootToDeleteFrom.left = Delete(value, rootToDeleteFrom.left);
+                rootToDeleteFrom.left = Delete(value, ref rootToDeleteFrom.left);
             }
             else
             {
@@ -77,31 +77,31 @@
                 else if (null == rootToDeleteFrom.left)
                 {
                     var l = rootToDeleteFrom.right; // successor of rootToDeleteFrom when left child is null
-                    rootToDeleteFrom.right = Delete(l.Value, rootToDeleteFrom.right);
+                    rootToDeleteFrom.right = Delete(l.Value, ref rootToDeleteFrom.right);
                     rootToDeleteFrom.Value = l.Value;
                 }
                 else
                 {
-                    var l = GetPredecessor(rootToDeleteFrom);
-                    rootToDeleteFrom.left = Delete(l.Value, rootToDeleteFrom.left);
+                    var l = GetPredecessor(ref rootToDeleteFrom);
+                    rootToDeleteFrom.left = Delete(l.Value, ref rootToDeleteFrom.left);
                     rootToDeleteFrom.Value = l.Value;
                 }
             }
 
-            rootToDeleteFrom = this.DecreaseLevel(rootToDeleteFrom);
-            rootToDeleteFrom = this.Skew(rootToDeleteFrom);
-            rootToDeleteFrom.right = this.Skew(rootToDeleteFrom.right);
+            rootToDeleteFrom = this.DecreaseLevel(ref rootToDeleteFrom);
+            rootToDeleteFrom = this.Skew(ref rootToDeleteFrom);
+            rootToDeleteFrom.right = this.Skew(ref rootToDeleteFrom.right);
             if (null != rootToDeleteFrom.right)
             {
-                rootToDeleteFrom.right.right = this.Skew(rootToDeleteFrom.right.right);
+                rootToDeleteFrom.right.right = this.Skew(ref rootToDeleteFrom.right.right);
             }
 
-            rootToDeleteFrom = this.Split(rootToDeleteFrom);
-            rootToDeleteFrom.right = this.Split(rootToDeleteFrom.right);
+            rootToDeleteFrom = this.Split(ref rootToDeleteFrom);
+            rootToDeleteFrom.right = this.Split(ref rootToDeleteFrom.right);
             return rootToDeleteFrom;
         }
 
-        private Node<TValue> Split(Node<TValue> nodeToRebalance)
+        private Node<TValue> Split(ref Node<TValue> nodeToRebalance)
         {
             if (null == nodeToRebalance)
             {
@@ -125,7 +125,7 @@
             }
         }
 
-        private Node<TValue> Skew(Node<TValue> nodeToRebalance)
+        private Node<TValue> Skew(ref Node<TValue> nodeToRebalance)
         {
             if (nodeToRebalance == null)
             {
@@ -148,7 +148,7 @@
             }
         }
 
-        private Node<TValue> DecreaseLevel(Node<TValue> rootToRemoveLinksFor)
+        private Node<TValue> DecreaseLevel(ref Node<TValue> rootToRemoveLinksFor)
         {
             int shouldBe = Math.Min(rootToRemoveLinksFor.left.level, rootToRemoveLinksFor.right.level) + 1;
             if (shouldBe.CompareTo(rootToRemoveLinksFor.level) < 0)
@@ -163,7 +163,7 @@
             return rootToRemoveLinksFor;
         }
 
-        private Node<TValue> GetPredecessor(Node<TValue> childNode)
+        private Node<TValue> GetPredecessor(ref Node<TValue> childNode)
         {
             Queue<Node<TValue>> queue = new Queue<Node<TValue>>();
             queue.Enqueue(childNode);

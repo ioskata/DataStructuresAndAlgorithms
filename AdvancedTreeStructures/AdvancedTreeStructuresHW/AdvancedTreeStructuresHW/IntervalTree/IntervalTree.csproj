@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57BBEFA5-204D-450F-87AC-EC5B99FDC483}</ProjectGuid>
+    <ProjectGuid>{4A0D6CA7-6676-411B-936A-7F20F8B7E561}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AATree</RootNamespace>
-    <AssemblyName>AATree</AssemblyName>
+    <RootNamespace>IntervalTree</RootNamespace>
+    <AssemblyName>IntervalTree</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,9 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AATree.cs" />
-    <Compile Include="AATreeDachev.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="IntervalTree.cs" />
+    <Compile Include="Interval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
