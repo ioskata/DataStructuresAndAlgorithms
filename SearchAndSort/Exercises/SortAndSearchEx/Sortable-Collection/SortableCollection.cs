@@ -10,6 +10,7 @@
     {
         private Func<T, T, int> Subtract;
         private Func<T, T, int> Multiply;
+        private Random rnd = new Random();
 
         public SortableCollection()
         {
@@ -53,7 +54,13 @@
 
         public void Shuffle()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < this.Items.Count; i++)
+            {
+                int r = i + this.rnd.Next(0, this.Items.Count - i);
+                var temp = this.Items[i];
+                this.Items[i] = this.Items[r];
+                this.Items[r] = temp;
+            }
         }
 
         public T[] ToArray()

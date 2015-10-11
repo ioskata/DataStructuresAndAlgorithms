@@ -26,8 +26,11 @@
             Console.WriteLine(collectionToSort);
 
             var collection = new SortableCollection<int>(2, -1, 5, 0, -3);
-            // collection = new SortableCollection<int>(3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48);
-            // Console.WriteLine(collection);
+            collection = new SortableCollection<int>(3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48);
+            Console.WriteLine(collection);
+
+            collection.Shuffle();
+            Console.WriteLine(collection);
 
             //collection.Sort(new Quicksorter<int>());
             //Console.WriteLine(collection);
