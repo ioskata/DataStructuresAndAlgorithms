@@ -11,7 +11,7 @@
     [TestClass]
     public class SortTests
     {
-        private static readonly ISorter<int> TestSorter = new MergeSorter<int>();
+        private static readonly ISorter<int> TestSorter = new HeapSorter<int>();
 
         private static readonly Random Random = new Random();
 

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHeap.cs" />
     <Compile Include="Contracts\ISorter.cs" />
     <Compile Include="SortableCollectionPlayground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

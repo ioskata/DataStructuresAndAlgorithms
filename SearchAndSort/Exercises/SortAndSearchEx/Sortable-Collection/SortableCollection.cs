@@ -112,7 +112,7 @@
                 {
                     low = mid + 1;
                 }
-                else if (array[mid].CompareTo(item) < 0)
+                else if (array[mid].CompareTo(item) > 0)
                 {
                     high = mid - 1;
                 }
