@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathsBetweenCellsInMatrix",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectedAreasInMatrix", "ConnectedAreasInMatrix\ConnectedAreasInMatrix.csproj", "{D124ED50-FE8D-45C4-BAEB-C4775DFBD8FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseArray", "ReverseArray\ReverseArray.csproj", "{67027E78-505E-4DBC-B91A-198101BE153F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D124ED50-FE8D-45C4-BAEB-C4775DFBD8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D124ED50-FE8D-45C4-BAEB-C4775DFBD8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D124ED50-FE8D-45C4-BAEB-C4775DFBD8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67027E78-505E-4DBC-B91A-198101BE153F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67027E78-505E-4DBC-B91A-198101BE153F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67027E78-505E-4DBC-B91A-198101BE153F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67027E78-505E-4DBC-B91A-198101BE153F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

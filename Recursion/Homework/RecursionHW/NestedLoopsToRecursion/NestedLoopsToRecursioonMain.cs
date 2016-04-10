@@ -25,7 +25,7 @@
             }
             else
             {
-                for (int i = 1; i < n + 1; i++)
+                for (int i = 1; i <= n; i++)
                 {
                     vector[index] = i;
                     Generate(index - 1, vector);
