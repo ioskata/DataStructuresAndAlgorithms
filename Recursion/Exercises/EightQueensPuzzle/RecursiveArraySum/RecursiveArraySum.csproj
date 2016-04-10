@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6BD52C4-1B04-46E3-80E3-174A274A6AE3}</ProjectGuid>
+    <ProjectGuid>{1750ADCB-3EAA-4629-A11D-6CBA3BBC1350}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EightQueensPuzzle</RootNamespace>
-    <AssemblyName>EightQueensPuzzle</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>RecursiveArraySum</RootNamespace>
+    <AssemblyName>RecursiveArraySum</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EightQueens.cs" />
-    <Compile Include="EightQueensPermutations.cs" />
-    <Compile Include="EightQueensPuzzleMain.cs" />
+    <Compile Include="RecursiveArraySumMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
