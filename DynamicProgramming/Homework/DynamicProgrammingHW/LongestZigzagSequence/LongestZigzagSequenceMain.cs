@@ -7,6 +7,9 @@
     {
         static void Main(string[] args)
         {
+            //var sequence = new[] { 8, 3, 5, 7, 0, 8, 9, 10, 20, 20, 20, 12, 19, 11 };
+            //var sequence = new[] { 1,2,3 };
+            //var sequence = new[] { 1, 3, 2 };
             var sequence = new[] { 24, 5, 31, 3, 3, 342, 51, 114, 52, 55, 56, 58 };
             var longestSeq = FindLongestZigzagSubsequence(sequence);
             Console.WriteLine("  Sequence: [{0}]", string.Join(", ", longestSeq));
@@ -55,7 +58,7 @@
 
             for (int i = maxIndex; i >= 0; i--)
             {
-                if((len[i, 0] == maxLength && !increased) || (len[i, 1] == maxLength && increased))
+                if((len[i, 0] == maxLength && len[i, 0] >= len[i, 1] && !increased) || (len[i, 1] == maxLength &&  len[i, 0] <= len[i, 1] && increased))
                 {
                     result[maxLength - 1] = sequence[i];
                     maxLength--;
